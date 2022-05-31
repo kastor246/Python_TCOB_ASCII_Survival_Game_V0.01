@@ -5,8 +5,8 @@ from input_handlers import EventHandler
 
 
 def main() -> None:
-    screen_width = 80
-    screen_height = 50
+    screen_width = 100
+    screen_height = 70
 
     player_x = int(
         screen_width / 2)  # Places the Player in the middle of the screen, the int() ensures TCOD doesn't throw an error in case of a float
