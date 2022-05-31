@@ -5,7 +5,7 @@ from tcod.console import Console
 
 from actions import EscapeAction, MovementAction
 from entity import Entity
-from input_handler import EventHandler
+from input_handlers import EventHandler
 
 
 class Engine:
@@ -27,7 +27,7 @@ class Engine:
 
     def render(self, console: Console, context: Context) -> None:
         for entity in self.entities:
-            console.print_(entity.x, entity.y, entity.char, fg=entity.color)
+            console.print(entity.x, entity.y, entity.char, fg=entity.color)
         context.present(console)
 
         console.clear()

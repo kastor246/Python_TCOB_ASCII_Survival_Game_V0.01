@@ -32,6 +32,7 @@ def main() -> None:
         while True:
             engine.render(console=root_console, context=context)
             events = tcod.event.wait()
+            engine.handle_events(events)
 
 
 if __name__ == "__main__":
