@@ -5,7 +5,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from engine import Engine
     from entity import Entity
-
+    print("Improted Entity and Engine to actions.py")
+print(TYPE_CHECKING)
 
 class Action:
     def perform(self, engine: Engine, entity: Entity) -> None:
@@ -29,14 +30,14 @@ class MovementAction(Action):
         self.dx = dx
         self.dy = dy
 
+    def perform(self, engine: Engine, entity: Entity) -> None:
+        dest_x = entity.x + self.dx
+        dest_y = entity.y + self.dy
+        print(entity.x)
 
-def perform(self, engine: Engine, entity: Entity) -> None:
-    dest_x = entity.x + self.dx
-    dest_y = entity.y + self.dy
-
-    if not engine.game_map.in_bounds(dest_x, dest_y):
-        return  # Destination is out of bounds
-    if not engine.game_map.tiles["walkable"][dest_x, dest_y]:
-        return  # Destination is blocked by a tile
-
-    entity.move(self.dx,self.dy)
+        if not engine.game_map.in_bounds(dest_x, dest_y):
+            return  # Destination is out of bounds
+        if not engine.game_map.tiles["walkable"][dest_x, dest_y]:
+            return  # Destination is blocked by a tile
+        print(type(entity.char.upper()), "This is the entity")
+        entity.move(self.dx, self.dy)

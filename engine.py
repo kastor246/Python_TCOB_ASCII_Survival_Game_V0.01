@@ -3,7 +3,7 @@ from typing import Set, Iterable, Any
 from tcod.context import Context
 from tcod.console import Console
 
-
+from actions import Action
 from entity import Entity
 from game_map import GameMap
 from input_handlers import EventHandler
@@ -22,6 +22,8 @@ class Engine:
 
             if action is None:
                 continue
+
+            action.perform(self, self.player)
 
     def render(self, console: Console, context: Context) -> None:
         self.game_map.render(console)
